@@ -131,7 +131,7 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 CORS_ALLOW_ALL_ORIGINS = True
 CORS_ALLOWED_ORIGINS = [ 
     'mugilan-portfolio.s3-website-ap-southeast-2.amazonaws.com',
-    'cyr86t0k58.execute-api.ap-southeast-2.amazonaws.com,
+    'cyr86t0k58.execute-api.ap-southeast-2.amazonaws.com',
     'd3bveyqx8101wf.cloudfront.net',
     'portfolio-backend-1-wvbq.onrender.com'
 ]
