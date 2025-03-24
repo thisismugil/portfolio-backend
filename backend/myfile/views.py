@@ -8,8 +8,8 @@ import json
 class ContactAPIView(APIView):
     def post(self, request):
         try:
-            # Parse JSON data
-            data = json.loads(request.body)
+            # Use DRF's built-in parser
+            data = request.data
             name = data.get('name')
             email = data.get('email')
             subject = data.get('subject')
@@ -28,5 +28,6 @@ class ContactAPIView(APIView):
                 fail_silently=False,
             )
             return Response({"message": "Email sent successfully!"}, status=status.HTTP_200_OK)
-        except json.JSONDecodeError:
-            return Response({"error": "Invalid JSON data."}, status=status.HTTP_400_BAD_REQUEST)
+        except Exception as e:
+            return Response({"error": str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
